@@ -5,7 +5,7 @@
   (let [position (:position app-state)]
     (println c, i)
     (if (= c \newline)
-      [:br {:class "hej"}]
+      [:span {:class "hej"}]
       [:span c])))
 
 (defn haiku []

@@ -18,6 +18,11 @@ body {
   margin-top: -20px;
 }
 
+.hej::after {
+  content: "¬\a" attr(title);
+  white-space: pre;
+}
+
 @keyframes opacity {
   from {
     opacity: 0;
