@@ -1,0 +1,15 @@
+{:source-paths ["src"]
+
+ :dependencies [
+                [reagent "0.8.1"]
+                [cider/cider-nrepl "0.17.0"]
+                [binaryage/devtools "0.9.10"]]
+
+ :builds {:app {:target :browser
+                :output-dir "public/js"
+                :asset-path "js"
+                :modules {:main {:entries [starter.core]}}
+                :devtools {:before-load starter.core/stop
+                           :after-load starter.core/start
+                           :http-root "public"
+                           :http-port 8000}}}}
