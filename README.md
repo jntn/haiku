@@ -1,7 +1,6 @@
-# Reagent with shadow-cljs
+# Haiku typing
 
-This is a minimal setup for using Reagent with shadow-cljs. It supports
-production builds and live-reloading.
+Build as a way to learn clojure
 
 ## Getting started
 
