@@ -1,6 +1,13 @@
+:root {
+  --text-color: #143449;
+  --background-color: #f9ceb6;
+}
+
 body {
-  background-color: wheat;
-  font-size: 24px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 44px;
+  font-family: 'Vollkorn', serif;
 }
 
 .center {
@@ -40,8 +47,9 @@ body {
 }
 
 .br::after {
-  content: "¬\a" attr(title);
+  content: "⏎\a" attr(title);
   white-space: pre;
+  font-size: 24px;
 }
 
 @keyframes opacity {
