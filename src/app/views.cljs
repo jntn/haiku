@@ -21,4 +21,4 @@
                        haiku-char-list)]))
 
 (defn debug []
-  [:div (:state @app-state)])
+  nil)

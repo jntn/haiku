@@ -8,5 +8,5 @@
       (swap! app-state update-in [:position] inc)
       (swap! app-state assoc-in [:state] :error))
 
-    (when (and correct (= :error (:state app-state)))
+    (when (and correct (= :error (:state @app-state)))
       (swap! app-state assoc-in [:state] :default))))
