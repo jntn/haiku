@@ -10,10 +10,27 @@ body {
   min-height: 90vh;
 }
 
+.char {
+  border-left: 2px solid transparent;
+}
+
+.char.current {
+  border-left: 2px solid black;
+  animation: pulse 1s infinite;
+}
+
 .fade-in {
   opacity: 0;
   animation: opacity 0.4s 1 ease;
   animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  margin-top: -20px;
+}
+
+.fade-in-later {
+  opacity: 0;
+  animation: opacity .4s 1 ease;
+  animation-delay: .5s;
   animation-fill-mode: forwards;
   margin-top: -20px;
 }
@@ -32,4 +49,9 @@ body {
     opacity: 1;
     margin-top: 0;
   }
+}
+
+@keyframes pulse {
+  from { border-color: rgba(0, 0, 0, 1); }
+  to { border-color: rgba(0, 0, 0, 0); }
 }

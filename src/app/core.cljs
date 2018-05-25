@@ -10,7 +10,8 @@
 
 (defn app []
   [:div {:class ["center" "fade-in"]}
-   [v/haiku]])
+   [v/haiku]
+   [v/debug]])
 
 (defn stop []
   (js/console.log "Stopping..."))
