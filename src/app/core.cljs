@@ -5,7 +5,7 @@
             [app.events :as events]))
 
 (defn keypress [e]
-  (let [key (String.fromCharCode (.-keyCode e))]
+  (let [key (.fromCharCode js/String (.-keyCode e))]
     (events/user-typed-key key)))
 
 (defn app []
