@@ -1,9 +1,13 @@
-language: node_js
-node_js:
-  - "node"
+language: java
+jdk:
+  - openjdk8
+env:
+  - NODE_VERSION="9"
 cache:
   directories:
     - "node_modules" # This will tell Travis CI to cache the dependencies
+before_install:
+  - nvm install $NODE_VERSION
 script: npm run release # Here you could also run the build step of your application
 before_deploy: npm install now --no-save # Install Now CLI on Travis
 deploy:
