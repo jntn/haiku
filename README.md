@@ -1,6 +1,7 @@
-# Haiku typing
+# Haiku typing 
+[![Build Status](https://travis-ci.org/jntn/haiku.svg?branch=master)](https://travis-ci.org/jntn/haiku)
 
-Build as a way to learn clojure
+Built as a way to learn clojure
 
 ## Getting started
 
