@@ -3,8 +3,10 @@
 
 (defonce app-state
   (atom
-   {:haikus [{:verse "The wren\rEarns his living\rNoiselessly."
-              :author "Kobayashi Issa"}]
+   {:haikus [{:verse "The wren\rEarns his living\rNoiselessly." :author "Kobayashi Issa"}
+             {:verse "brilliant moon\ris it true that you too\rmust pass in a hurry?" :author "Kobayashi Issa"}
+             {:verse "Blowing from the west\rFallen leaves gather\rIn the east." :author "Yosa Buson"}
+             {:verse "Over the wintry\rforest, winds howl in rage\rwith no leaves to blow." :author "Natsume Soseki"}]
     :haiku-index 0
     :position 0
     :state :default
