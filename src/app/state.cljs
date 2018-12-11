@@ -21,10 +21,10 @@
 (defn haiku-author []
   (:author (haiku)))
 
-(defn last-char []
+(defn last-char? []
   (= (count (haiku-verse)) (:position @app-state)))
 
-(defn last-haiku []
+(defn last-haiku? []
   (print (count (:haikus @app-state)))
   (print (:haiku-index @app-state))
   (= (count (:haikus @app-state)) (+ 1 (:haiku-index @app-state))))

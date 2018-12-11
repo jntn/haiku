@@ -1,7 +1,6 @@
 (ns app.core
   (:require [reagent.core :as r]
             [app.views :as v]
-            [app.state :refer [app-state]]
             [app.events :as events]))
 
 (defn keypress [e]

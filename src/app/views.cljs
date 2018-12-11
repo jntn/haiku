@@ -13,16 +13,20 @@
 
 (defn results []
   (when (= :showing-result (:state @app-state))
-    [:div {:class "results"} [:div "Good work!"] [:div "Take a deep breath and press space to continue"]]))
+    [:div {:class "results"}
+     [:div "Good work!"]
+     [:div "Take a deep breath and press space to continue"]]))
 
 (defn haiku []
   (let [haiku-char-list (-> (:haikus @app-state)
                             (get (:haiku-index @app-state))
                             (:verse)
                             (seq))]
-    [:<> [:div {:class "haiku"} (map-indexed (fn [i c]
-                                               ^{:key i} [letter c i])
-                                             haiku-char-list)] [results]]))
+    [:<>
+     [:div {:class "haiku"}
+      (map-indexed (fn [i c]
+                     ^{:key i} [letter c i])
+                   haiku-char-list)] [results]]))
 
 (defn debug []
   (print @app-state))
