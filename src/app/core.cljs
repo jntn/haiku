@@ -7,10 +7,10 @@
   (let [key (.fromCharCode js/String (.-keyCode e))]
     (events/user-typed-key key)))
 
-(defn stop []
+(defn ^:dev/before-load stop []
   (js/console.log "Stopping..."))
 
-(defn start []
+(defn ^:dev/after-load start []
   (js/console.log "Starting...")
   (set! (.-onkeypress js/document) keypress)
   (r/render [v/app]
