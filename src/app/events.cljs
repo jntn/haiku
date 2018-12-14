@@ -5,7 +5,7 @@
   (let [pos (:position @app-state)
         correct (= (nth (haiku-verse) pos) key)]
     (when (and correct (= 0 (:position @app-state)))
-      (swap! app-state assoc-in [:start-time] (.getTime (js/Date.))))
+      (swap! app-state assoc :start-time (.getTime (js/Date.))))
 
     (if correct
       (swap! app-state update-in [:position] inc)
@@ -15,7 +15,7 @@
       (swap! app-state assoc-in [:state] :default))
 
     (when (and correct (last-char?))
-      (swap! app-state assoc-in [:state] :showing-result))))
+      (swap! app-state assoc :state :showing-result :end-time (.getTime (js/Date.))))))
 
 (defn handle-result [key]
   (when (= " " key) ((swap! app-state assoc-in [:state] :default)

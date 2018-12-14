@@ -10,7 +10,8 @@
     :haiku-index 0
     :position 0
     :state :default
-    :start-time nil}))
+    :start-time 0
+    :end-time 0}))
 
 (defn haiku []
   (nth (:haikus @app-state) (:haiku-index @app-state)))
@@ -21,6 +22,13 @@
 (defn haiku-author []
   (:author (haiku)))
 
+(defn wpm []
+  "WPM calculation according to https://www.speedtypingonline.com/typing-equations"
+  (let [minutes (/ (- (:end-time @app-state) (:start-time @app-state)) 60000)
+        typed-entries (count (haiku-verse))
+        words (/ typed-entries 5)]
+    (js/Math.round (/ words minutes))))
+
 (defn last-char? []
   (= (count (haiku-verse)) (:position @app-state)))
 
@@ -28,3 +36,6 @@
   (print (count (:haikus @app-state)))
   (print (:haiku-index @app-state))
   (= (count (:haikus @app-state)) (+ 1 (:haiku-index @app-state))))
+
+(defn error-state? []
+  (= :error (:state @app-state)))

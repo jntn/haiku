@@ -7,18 +7,13 @@
   (let [key (.fromCharCode js/String (.-keyCode e))]
     (events/user-typed-key key)))
 
-(defn app []
-  [:div {:class ["center" "fade-in"]}
-   [v/haiku]
-   [v/debug]])
-
 (defn stop []
   (js/console.log "Stopping..."))
 
 (defn start []
   (js/console.log "Starting...")
   (set! (.-onkeypress js/document) keypress)
-  (r/render [app]
+  (r/render [v/app]
             (.getElementById js/document "app")))
 
 (defn ^:export init []

@@ -20,14 +20,20 @@ body {
 
 .results {
   text-align: center;
+  position: absolute;
+  top: calc(50% - 69px);
+  left: calc(50% - 209px);
+  background-color: papayawhip;
+  padding: 20px 30px;
+  border-radius: 6px;
 }
 
 .haiku {
   font-size: 44px;
 }
 
-.error {
-  color: red;
+.error, br .error {
+  color: red !important;
 }
 
 .char {
@@ -55,10 +61,39 @@ body {
   margin-top: -20px;
 }
 
+.key {
+  background-color: #eabba042;
+  border-radius: 6px;
+  padding: 0px 7px;
+}
+
+.wpm {
+  font-weight: 600;
+}
+
+.author {
+  padding-top: 10px;
+  color: rgba(0,0,0,.3);
+  height: 28px;
+}
+
 .br::after {
   content: "⏎\a" attr(title);
   white-space: pre;
   font-size: 24px;
+}
+
+.br {
+  color: rgba(0,0,0,.3);
+}
+
+.space {
+  visibility: hidden;
+  font-size: 32px;
+}
+
+.space.error {
+  visibility: visible;
 }
 
 @keyframes opacity {
