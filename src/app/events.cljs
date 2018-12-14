@@ -1,6 +1,9 @@
 (ns app.events
   (:require [app.state :refer [app-state haiku-verse last-char? last-haiku?]]))
 
+(defn shuffle-haikus []
+  (swap! app-state update :haikus shuffle))
+
 (defn handle-keypress [key]
   (let [pos (:position @app-state)
         correct (= (nth (haiku-verse) pos) key)]

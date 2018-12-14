@@ -44,5 +44,4 @@
 (defn app []
   [:div {:class "center"}
    [:div
-    [haiku]
-    [debug]]])
+    [haiku]]])

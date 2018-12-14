@@ -6,7 +6,10 @@
    {:haikus [{:verse "The wren\rEarns his living\rNoiselessly." :author "Kobayashi Issa"}
              {:verse "brilliant moon\ris it true that you too\rmust pass in a hurry?" :author "Kobayashi Issa"}
              {:verse "Blowing from the west\rFallen leaves gather\rIn the east." :author "Yosa Buson"}
-             {:verse "Over the wintry\rforest, winds howl in rage\rwith no leaves to blow." :author "Natsume Soseki"}]
+             {:verse "Over the wintry\rforest, winds howl in rage\rwith no leaves to blow." :author "Natsume Soseki"}
+             {:verse "old pond --\ranother lily\rin bloom" :author "Inoue Hiromi"}
+             {:verse "after the storm\rthe wind chimes\rrealigning" :author "Asopa Sanjuktaa"}
+             {:verse "dawn --\rthe maple's colors\rspread through the fog" :author "Cindy Zackowitz"}]
     :haiku-index 0
     :position 0
     :state :default

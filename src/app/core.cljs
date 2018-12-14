@@ -17,4 +17,5 @@
             (.getElementById js/document "app")))
 
 (defn ^:export init []
+  (events/shuffle-haikus)
   (start))
