@@ -9,9 +9,17 @@
         {
             "src": "public/**/*",
             "use": "@now/static"
+        },
+        {
+            "src": "api/haikus/index.js",
+            "use": "@now/node"
         }
     ],
     "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/api/$1"
+        },
         {
             "src": "/(.*)",
             "dest": "/public/$1"

@@ -1,4 +1,4 @@
-(ns app.utils
+(ns jntn.app.utils
   (:require [clojure.edn :as edn]
             [clojure.string :as s]))
 

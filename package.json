@@ -1,8 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "dev": "shadow-cljs watch app",
-    "release": "shadow-cljs release app"
+    "dev": "npm run watch | npm run dev-server",
+    "release": "shadow-cljs release app haikus",
+    "dev-server": "nodemon --watch api -q server",
+    "watch": "shadow-cljs watch app haikus",
+    "test": "shadow-cljs compile test"
   },
   "dependencies": {
     "create-react-class": "^15.6.3",
@@ -10,6 +13,7 @@
     "react-dom": "^16.6.3"
   },
   "devDependencies": {
+    "nodemon": "^1.18.9",
     "shadow-cljs": "^2.7.4"
   }
 }

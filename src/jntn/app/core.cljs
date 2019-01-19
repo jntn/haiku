@@ -1,7 +1,7 @@
-(ns app.core
+(ns jntn.app.core
   (:require [reagent.core :as r]
-            [app.views :as v]
-            [app.events :as events]))
+            [jntn.app.views :as v]
+            [jntn.app.events :as events]))
 
 (defn keypress [e]
   (let [key (.fromCharCode js/String (.-keyCode e))]
@@ -17,5 +17,5 @@
             (.getElementById js/document "app")))
 
 (defn ^:export init []
-  (events/shuffle-haikus)
+  (events/load-haiku-from-server)
   (start))

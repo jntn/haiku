@@ -1,5 +1,5 @@
-(ns app.views
-  (:require [app.state :refer [app-state wpm haiku-author error-state?]]))
+(ns jntn.app.views
+  (:require [jntn.app.state :refer [app-state wpm haiku-author error-state?]]))
 
 (defn get-char-classes [c i]
   (let [pos (:position @app-state)]
@@ -25,10 +25,10 @@
       [:span " to continue."]]]))
 
 (defn haiku []
-  (let [haiku-char-list (-> (:haikus @app-state)
-                            (get (:haiku-index @app-state))
-                            (:verse)
-                            (seq))]
+  (let [haiku-char-list (->
+                         (:haiku @app-state)
+                         (:verse)
+                         (seq))]
     [:div {:class "fade-in"}
      [:div {:class "haiku"}
       (map-indexed (fn [i c]
@@ -37,11 +37,15 @@
      [:div {:class "author"} (haiku-author)]
      [results]]))
 
+(defn loading []
+  [:div "Loading"])
+
 (defn debug []
   (print @app-state)
   (print (wpm)))
 
 (defn app []
-  [:div {:class "center"}
-   [:div
-    [haiku]]])
+  (let [loading? (not (:haiku @app-state))]
+    [:div {:class "center"}
+     [:div
+      [(if loading? loading haiku)]]]))
