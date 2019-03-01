@@ -2,27 +2,19 @@
     "version": 2,
     "name": "haiku",
     "alias": "haiku.jntn.se",
-    "github": {
-        "enabled": "false"
-    },
     "builds": [
         {
-            "src": "public/**/*",
-            "use": "@now/static"
-        },
-        {
-            "src": "api/haikus/index.js",
-            "use": "@now/node"
+            "src": "shadow-cljs.edn",
+            "use": "@jntn/now-shadow-cljs",
+            "config": {
+                "build": "haikus"
+            }
         }
     ],
     "routes": [
         {
             "src": "/api/(.*)",
             "dest": "/api/$1"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/public/$1"
         }
     ]
 }

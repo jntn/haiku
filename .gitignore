@@ -4,3 +4,4 @@ target
 .shadow-cljs
 /api
 /test
+.m2

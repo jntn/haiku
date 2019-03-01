@@ -1,5 +1,5 @@
 {:source-paths ["src"]
-
+ :local-repo ".m2"
  :dependencies [[reagent "0.8.1"]
                 [cider/cider-nrepl "0.17.0"]
                 [binaryage/devtools "0.9.10"]
@@ -7,7 +7,6 @@
 
  :builds {:haikus {:target :node-library
                    :output-to "api/haikus/index.js"
-                   :output-dir "api/haikus"
                    :exports-var jntn.api.haikus/handler}
           :app {:target :browser
                 :build-hooks
