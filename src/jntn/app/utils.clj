@@ -7,6 +7,6 @@
   [build-state]
   (if (= :release (:shadow.build/mode build-state))
     (let [output-name (:output-name (first (edn/read-string (slurp "public/js/manifest.edn"))))
-          index-html (s/replace (slurp "public/index.html") "main.js" output-name)]
+          index-html (s/replace (slurp "public/index.html") #"main\..+\.js" output-name)]
       (spit "public/index.html" index-html)))
   build-state)
