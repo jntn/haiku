@@ -38,7 +38,7 @@
      [results]]))
 
 (defn loading []
-  [:div "Loading"])
+  [:div "Loading..."])
 
 (defn debug []
   (print @app-state)
