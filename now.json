@@ -5,13 +5,14 @@
     "builds": [
         {
             "src": "shadow-cljs.edn",
-            "use": "@jntn/now-shadow-cljs",
-            "config": {
-                "build": "haikus"
-            }
+            "use": "@jntn/now-shadow-cljs"
         }
     ],
     "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/public/$1"
+        },
         {
             "src": "/api/(.*)",
             "dest": "/api/$1"
