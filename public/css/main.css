@@ -1,6 +1,7 @@
 :root {
   --text-color: #143449;
   --background-color: #f9ceb6;
+  --space-color: #e0b9a4;
 }
 
 body {
@@ -94,8 +95,11 @@ body {
 }
 
 .space {
-  visibility: hidden;
-  font-size: 32px;
+  color: var(--space-color);
+}
+
+.space.current {
+  visibility: visible;
 }
 
 .space.error {
