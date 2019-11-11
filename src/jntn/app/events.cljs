@@ -32,6 +32,7 @@
 (defn handle-result [key]
   (when (= " " key) ((swap! app-state assoc-in [:state] :default)
                      (swap! app-state assoc-in [:position] 0)
+                     (swap! app-state assoc-in [:haiku] nil)
                      (load-haiku-from-server))))
 
 (defn user-typed-key [key]
