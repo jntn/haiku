@@ -1,21 +1,21 @@
 {
-    "version": 2,
-    "name": "haiku",
-    "alias": "haiku.jntn.se",
-    "builds": [
-        {
-            "src": "shadow-cljs.edn",
-            "use": "@jntn/now-shadow-cljs"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/public/$1"
-        },
-        {
-            "src": "/api/(.*)",
-            "dest": "/api/$1"
-        }
-    ]
+  "version": 2,
+  "name": "haiku",
+  "alias": "haiku.jntn.se",
+  "builds": [
+    {
+      "src": "shadow-cljs.edn",
+      "use": "@jntn/now-shadow-cljs@beta"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
+  ]
 }
